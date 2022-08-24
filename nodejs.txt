@@ -1,0 +1,28 @@
+*Archivo app: Siempre tiene la función de encender y apagar el servidor
+*controllers se configuran las respuetas, logica de negocio y pero primero se encarga de depurar las peticiones
+*Controllers para la logica de negocio
+*realizar un metodo para cada ruta
+*La peticion llega al archivo de rutas
+*Para usar una clase hay que instanciarla por medio de un objeto
+*el paso de datos por el cuerpo middleware
+*ESPERA CON PROCESOS ASINCRONICOS
+*Capas modelos sirven para llevar el control de que datos permito que entre en el proceso, necesito el paquete mongos
+
+*para correr el servidor en la consola= node app.js (el nombre del archivo)
+*npm install (instalar todos los paquetes)
+
+
+MONGO:
+*entrar free
+*DEPLOYMENT: database
+*Enviroment: se guarda las bd de mongo atlas
+
+Codigos protocopo http:
+se definen por funciones o problemas:
+*2xx: Respuestas buenas(200,204...)
+*3xx: Respuestas de conexion-redireccion RED
+*4xx: Respuesta del lado del cliente (401:)
+*5xx: Respuestas del lado del servidor
+
+CONTRASEÑA Mongodb:
+-Admin123
