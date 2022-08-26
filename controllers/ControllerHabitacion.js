@@ -98,7 +98,9 @@ export class ControllersHabitacion{
 
     //eliminar habitacion
     eliminarHabitacion(request,response){  try{
-        response.status(200).json({})
+        response.status(200).json({
+            
+        })
          
 
      } catch(error){ //fallo resolviendo la peticion

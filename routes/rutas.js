@@ -2,7 +2,9 @@ import express from 'express'
 
 //Importar el controlador de habitaciones
 import {ControllersHabitacion} from '../controllers/ControllerHabitacion.js' //Agregar siempre .js
+import { ControllersReserva } from '../controllers/ControllersReserva.js'
 let controllersHabitacion = new ControllersHabitacion () //INSTANCIAR LA CLASE PARA LUEGO UTILIZARLA EN LAS ROUTES
+let controllersReserva = new ControllersReserva()
 
 
 //Variable para personalizar las rutas (ENDPONTS) de mis servicios
@@ -24,22 +26,12 @@ routes.put('/viajes/v1/habitacion/:id', controllersHabitacion.editarHabitacion)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //ENDPOINTS PARA LOS SERVICIOS ASOCIADOS A LAS RESERVAS
-routes.get('viajes/v1/reserva', function (req, res) { //RUTA PARA OBTENER TODAS LAS RESERVAS
-  res.send('Hello World')
-})
+routes.get('viajes/v1/reserva', controllersReserva.buscarReservas)
 
-routes.get('viajes/v1/reserva/:id', function (req, res) { //RUTA PARA OBTENER SOLO UNA RESERVA
-  res.send('Hello World')
-})
+routes.get('viajes/v1/reserva/:id', controllersReserva.buscarReservaId)
 
-routes.post('viajes/v1/reserva', function (req, res) { //funcion anonima que se ejecuta apenas se recibe la petición
-    res.send('Hello World')
-  })//Crear reservas
+routes.post('viajes/v1/reserva', controllersReserva.agregarReserva)//Crear reservas
 
-routes.put('viajes/v1/reserva/:id', function (req, res) { //funcion anonima que se ejecuta apenas se recibe la petición
-    res.send('Hello World')
-  })//actualizar la reserva
+routes.put('viajes/v1/reserva/:id', controllersReserva.editarReserva)//actualizar la reserva
 
-routes.delete('viajes/v1/cancelacion/:id', function (req, res) { //funcion anonima que se ejecuta apenas se recibe la petición
-    res.send('Hello World')
-  })//cancelar o eliminar la reserva
+routes.delete('viajes/v1/cancelacion/:id', controllersReserva.eliminarReserva)//cancelar o eliminar la reserva
