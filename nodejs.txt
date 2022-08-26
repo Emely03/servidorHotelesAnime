@@ -26,3 +26,9 @@ se definen por funciones o problemas:
 
 CONTRASEÑA Mongodb:
 -Admin123
+
+CONTRASEÑA Heroku:
+-administrador123*
+
+***Para ingresar a mongo:
+-Entro con google
