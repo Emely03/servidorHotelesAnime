@@ -6,7 +6,7 @@ import{ServicioHabitacion} from '../services/servicioHabitacion.js'
 export class ControllersHabitacion{
     constructor(){}
     //Buscar habitaciones
-    buscarHabitaciones(request,response){
+    async buscarHabitaciones(request,response){
         //Llamo al servicio
         let servicioHabitacion=new ServicioHabitacion()
 
@@ -15,7 +15,7 @@ export class ControllersHabitacion{
         try{
            response.status(200).json({ //formato de respuesta estandar
             mensaje:"exito en la consulta", 
-            datos:servicioHabitacion.buscarTodas()
+            datos:await servicioHabitacion.buscarTodas()
            })
             
 
