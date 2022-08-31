@@ -2,12 +2,12 @@ import {ServicioReserva} from '../services/servicioReserva.js'
 
 export class ControllersReserva{
     constructor(){}
-    buscarReservas(request,response){
+   async buscarReservas(request,response){
         let servicioReserva = new ServicioReserva()
         try{
             response.status(200).json({ //formato de respuesta estandar
              mensaje:"exito en la consulta", 
-             datos:servicioReserva.buscarTodas()
+             datos:await servicioReserva.buscarTodas()
             })
               
          } catch(error){ //fallo resolviendo la peticion
@@ -18,7 +18,7 @@ export class ControllersReserva{
          }
      }
 
-     buscarReservaId(request,response){
+    async buscarReservaId(request,response){
         let identificador=request.params.id
 
         //llamo al servicio
@@ -28,7 +28,7 @@ export class ControllersReserva{
         try{
             response.status(200).json({
             mensaje:"exito en la consulta " + identificador,
-            datos:servicioReserva.buscarPorId(identificador)
+            datos:await servicioReserva.buscarPorId(identificador)
             }
              )
              
@@ -41,14 +41,14 @@ export class ControllersReserva{
     }
 
     //agregar reserva
-    agregarReserva(request,response){  
+    async agregarReserva(request,response){  
         let cuerpo=request.body
 
          //llamo al servicio
          let servicioReserva = new ServicioReserva()
 
         try{
-        servicioReserva.agregar(cuerpo)
+       await servicioReserva.agregar(cuerpo)
         response.status(200).json({    
             mensaje:"exito agregando la reserva",
             datos:null
@@ -63,7 +63,7 @@ export class ControllersReserva{
      }}
 
      //editar reserva
-    editarReserva(request,response){ 
+   async editarReserva(request,response){ 
         //recibir id como parametro
         let id=request.params.id
         //Recibir los datos con los que voy a editas (body)
@@ -74,7 +74,7 @@ export class ControllersReserva{
         let servicioReserva = new ServicioReserva()
 
         try{
-            servicioReserva.actualizar(id,datos)
+           await servicioReserva.actualizar(id,datos)
             response.status(200).json({
             mensaje:"exito editando la reserva" +id,
             datos:null
@@ -89,12 +89,12 @@ export class ControllersReserva{
      }}
 
      //eliminar habitacion
-     eliminarReserva(request,response){  
+    async eliminarReserva(request,response){  
          //llamo al servicio
          let servicioReserva = new ServicioReserva()
         
         try{
-        servicioReserva.eliminar(id,datos)
+       await servicioReserva.eliminar(id,datos)
         response.status(200).json({
             mensaje:"exito elimando la habitacion" +id,
             datos:null
