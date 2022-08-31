@@ -26,12 +26,12 @@ routes.put('/viajes/v1/habitacion/:id', controllersHabitacion.editarHabitacion)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //ENDPOINTS PARA LOS SERVICIOS ASOCIADOS A LAS RESERVAS
-routes.get('/viajes/v1/reservas', controllersReserva.buscarReservas)
+routes.get('/viajes/reservas', controllersReserva.buscarReservas)
 
-routes.get('/viajes/v1/reserva/:id', controllersReserva.buscarReservaId)
+routes.get('/viajes/reserva/:id', controllersReserva.buscarReservaId)
 
-routes.post('/viajes/v1/reserva', controllersReserva.agregarReserva)//Crear reservas
+routes.post('/viajes/reserva', controllersReserva.agregarReserva)//Crear reservas
 
-routes.put('/viajes/v1/reserva/:id', controllersReserva.editarReserva)//actualizar la reserva
+routes.put('/viajes/reserva/:id', controllersReserva.editarReserva)//actualizar la reserva
 
-routes.delete('/viajes/v1/cancelacion/:id', controllersReserva.eliminarReserva)//cancelar o eliminar la reserva
+routes.delete('/viajes/cancelacion/:id', controllersReserva.eliminarReserva)//cancelar o eliminar la reserva
