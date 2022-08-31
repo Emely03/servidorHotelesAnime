@@ -38,7 +38,7 @@ export class ControllersHabitacion{
         try{
             response.status(200).json({
             mensaje:"exito en la consulta " + identificador,
-            datos:await servicioHabitacion.buscarHabitacionId(identificador)
+            datos:await servicioHabitacion.buscarPorId(identificador)
             })
              
          } catch(error){ //fallo resolviendo la peticion

@@ -28,7 +28,7 @@ export class ControllersReserva{
         try{
             response.status(200).json({
             mensaje:"exito en la consulta " + identificador,
-            datos:servicioReserva.buscarReservaId(identificador)
+            datos:servicioReserva.buscarPorId(identificador)
             }
              )
              
