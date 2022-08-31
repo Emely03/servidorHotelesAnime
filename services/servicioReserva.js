@@ -22,6 +22,6 @@ export class ServicioReserva{
     }
    
     async eliminar(id){
-        return modeloReserva.findByIdDelete(id)
+        return modeloReserva.findByIdAndDelete(id)
     }
 }
