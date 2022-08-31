@@ -96,14 +96,14 @@ export class ControllersReserva{
         try{
        await servicioReserva.eliminar(id)
         response.status(200).json({
-            mensaje:"exito elimando la habitacion" +id,
+            mensaje:"exito elimando la habitacion" + id,
             datos:null
         })
          
 
      } catch(error){ //fallo resolviendo la peticion
          response(400).json({
-            mensaje:"exito elimando la habitacion" +id,
+            mensaje:"Fallo elimando la habitacion" + error,
             datos:null
          })
      }}
