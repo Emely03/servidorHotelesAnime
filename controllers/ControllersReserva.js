@@ -92,7 +92,7 @@ export class ControllersReserva{
     async eliminarReserva(request,response){  
          //llamo al servicio
          let servicioReserva = new ServicioReserva()
-        
+         let id=request.params.id
         try{
        await servicioReserva.eliminar(id)
         response.status(200).json({
@@ -100,12 +100,10 @@ export class ControllersReserva{
             datos:null
         })
          
-
      } catch(error){ //fallo resolviendo la peticion
          response(400).json({
             mensaje:"Fallo elimando la habitacion" + error,
             datos:null
          })
      }}
-
 }
