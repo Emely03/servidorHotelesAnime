@@ -94,7 +94,7 @@ export class ControllersReserva{
          let servicioReserva = new ServicioReserva()
         
         try{
-       await servicioReserva.eliminar(id,datos)
+       await servicioReserva.eliminar(id)
         response.status(200).json({
             mensaje:"exito elimando la habitacion" +id,
             datos:null
