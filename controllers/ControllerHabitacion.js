@@ -28,7 +28,7 @@ export class ControllersHabitacion{
     }
 
     //buscar habitacion por id
-    buscarHabitacionId(request,response){
+   async buscarHabitacionId(request,response){
         let identificador=request.params.id
 
         //llamo al servicio
@@ -38,7 +38,7 @@ export class ControllersHabitacion{
         try{
             response.status(200).json({
             mensaje:"exito en la consulta " + identificador,
-            datos:servicioHabitacion.buscarHabitacionId(identificador)
+            datos:await servicioHabitacion.buscarHabitacionId(identificador)
             })
              
          } catch(error){ //fallo resolviendo la peticion
@@ -50,14 +50,14 @@ export class ControllersHabitacion{
     }
 
     //agregar la habitacion
-    agregarHabitacion(request,response){  
+   async agregarHabitacion(request,response){  
         let cuerpo=request.body
 
         //llamo al servicio
         let servicioHabitacion=new ServicioHabitacion()
 
         try{
-        servicioHabitacion.agregar(cuerpo)
+       await servicioHabitacion.agregar(cuerpo)
         response.status(200).json({    
             mensaje:"exito agregando la habitacion",
             datos:null
@@ -72,7 +72,7 @@ export class ControllersHabitacion{
      }}
 
     //editar habitacion
-    editarHabitacion(request,response){ 
+   async editarHabitacion(request,response){ 
         //recibir id como parametro
         let id=request.params.id
         //Recibir los datos con los que voy a editas (body)
@@ -82,7 +82,7 @@ export class ControllersHabitacion{
         let servicioHabitacion=new ServicioHabitacion()
 
         try{
-            servicioHabitacion.actualizar(id,datos)
+           await servicioHabitacion.actualizar(id,datos)
             response.status(200).json({
             mensaje:"exito editando la habitacion" +id,
             datos:null
@@ -97,7 +97,7 @@ export class ControllersHabitacion{
      }}
 
     //eliminar habitacion
-    eliminarHabitacion(request,response){  try{
+  async  eliminarHabitacion(request,response){  try{
         response.status(200).json({
             
         })
